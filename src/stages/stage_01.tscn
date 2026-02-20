@@ -1,11 +1,3 @@
 [gd_scene format=3 uid="uid://c8ga3vp4ry8o4"]
 
-[ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="1_nlesd"]
-
 [node name="Stage_01" type="Node2D" unique_id=900142613]
-
-[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("1_nlesd")]
-position = Vector2(186, 254)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=596045734]
-position = Vector2(224, 128)
