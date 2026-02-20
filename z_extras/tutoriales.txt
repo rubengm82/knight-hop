@@ -1,0 +1,12 @@
+Tutoriales de Comenzar y aprender Godot 4.x (Folder game_base_tutors)
+- https://youtu.be/eQ_HBvtdoiU?si=x-6Ta4Vh-qWEr9cp
+
+Gráficos Base del Knight
+- https://opengameart.org/content/animated-knight-character-pack-v20
+- https://rgsdev.itch.io/
+
+Música | SFX 
+- https://sfxr.me/
+- https://www.fesliyanstudios.com/es/royalty-free-music/downloads-c/8-bit-music/6?utm_source=chatgpt.com
+- https://www.zapsplat.com/music/crt-skies-royalty-free-music-loop-8-bit-chiptune-simple-happy/?utm_source=chatgpt.com
+
