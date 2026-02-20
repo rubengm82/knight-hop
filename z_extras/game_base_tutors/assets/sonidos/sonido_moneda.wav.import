@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c31k8lrprp1m7"
-path="res://.godot/imported/sonido_moneda.wav-eae974597beae20681741765866c8b71.sample"
+path="res://.godot/imported/sonido_moneda.wav-785cb5e27b1d4b71facacafc6edfdd42.sample"
 
 [deps]
 
-source_file="res://sonidos/sonido_moneda.wav"
-dest_files=["res://.godot/imported/sonido_moneda.wav-eae974597beae20681741765866c8b71.sample"]
+source_file="res://z_extras/game_base_tutors/assets/sonidos/sonido_moneda.wav"
+dest_files=["res://.godot/imported/sonido_moneda.wav-785cb5e27b1d4b71facacafc6edfdd42.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://csyoql15iygaw"
-path="res://.godot/imported/musica.wav-1272e54906429fa145d9d27195220d30.sample"
+path="res://.godot/imported/musica.wav-51a9456816e63bd525355a7af18d6e77.sample"
 
 [deps]
 
-source_file="res://musica/musica.wav"
-dest_files=["res://.godot/imported/musica.wav-1272e54906429fa145d9d27195220d30.sample"]
+source_file="res://z_extras/game_base_tutors/assets/musica/musica.wav"
+dest_files=["res://.godot/imported/musica.wav-51a9456816e63bd525355a7af18d6e77.sample"]
 
 [params]
 
