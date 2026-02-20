@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bykwtetbrnnv0"]
+
+[ext_resource type="Script" uid="uid://w67ejoxcqh7d" path="res://src/items/coin.gd" id="1_5a4dj"]
+[ext_resource type="Texture2D" uid="uid://bwuktj4nn4pde" path="res://assets/graphics/sprites/coin_gold.png" id="1_yjgxs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a4dj"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgtet"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or45h"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30kwu"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1jo4"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07swq"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1vn1"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so40o"]
+atlas = ExtResource("1_yjgxs")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82u42"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a4dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgtet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or45h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30kwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1jo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07swq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1vn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so40o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjgxs"]
+size = Vector2(10, 10)
+
+[node name="Coin" type="StaticBody2D" unique_id=304581339]
+script = ExtResource("1_5a4dj")
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1860286599]
+sprite_frames = SubResource("SpriteFrames_82u42")
+animation = &"idle"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1099411867]
+visible = false
+shape = SubResource("RectangleShape2D_yjgxs")
+
+[node name="Coin" type="Node2D" parent="." unique_id=1558770632]
