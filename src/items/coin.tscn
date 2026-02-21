@@ -80,5 +80,3 @@ animation = &"idle"
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1099411867]
 visible = false
 shape = SubResource("RectangleShape2D_yjgxs")
-
-[node name="Coin" type="Node2D" parent="." unique_id=1558770632]

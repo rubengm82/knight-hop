@@ -72,6 +72,5 @@ animation = &"idle"
 frame_progress = 0.5717817
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=607557145]
-visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_337w4")

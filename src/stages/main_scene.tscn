@@ -7,8 +7,6 @@
 
 [node name="MainScene" type="Node2D" unique_id=1897659467]
 
-[node name="Stage_01" parent="." unique_id=900142613 instance=ExtResource("1_ufamd")]
-
 [node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("2_l3epe")]
 position = Vector2(224, 256)
 
@@ -17,7 +15,10 @@ position = Vector2(224, 128)
 zoom = Vector2(3, 3)
 
 [node name="Coin" parent="." unique_id=304581339 instance=ExtResource("3_l3epe")]
-position = Vector2(246, 236)
+position = Vector2(246, 218)
 
 [node name="SlimeRed" parent="." unique_id=1103676922 instance=ExtResource("4_w4usf")]
 position = Vector2(198, 248)
+
+[node name="Stage_01" parent="." unique_id=900142613 instance=ExtResource("1_ufamd")]
+position = Vector2(0, 256)

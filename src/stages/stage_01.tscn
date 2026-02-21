@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://c8ga3vp4ry8o4"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_twm8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlesd"]
+size = Vector2(448, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twm8o"]
+size = Vector2(20, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gitgc"]
+size = Vector2(20, 93.5)
+
 [node name="Stage_01" type="Node2D" unique_id=900142613]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=174715223]
+position = Vector2(0, -1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1999098780]
+position = Vector2(223.90456, 20.94416)
+scale = Vector2(-448.02206, 39.987625)
+mesh = SubResource("QuadMesh_twm8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1013656163]
+position = Vector2(224, 21)
+shape = SubResource("RectangleShape2D_nlesd")
+
+[node name="CollisionShape2D_izq" type="CollisionShape2D" parent="StaticBody2D" unique_id=1208419912]
+position = Vector2(-10, -45.5)
+shape = SubResource("RectangleShape2D_twm8o")
+
+[node name="CollisionShape2D_der" type="CollisionShape2D" parent="StaticBody2D" unique_id=756062617]
+position = Vector2(458, -45.75)
+shape = SubResource("RectangleShape2D_gitgc")
