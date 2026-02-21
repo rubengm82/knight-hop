@@ -9,9 +9,9 @@ const FRICTION := 1000.0				# Friccion de sus zapatos
 
 const COYOTE_TIME := 0.15				# Tiempo extra para saltar tras dejar el suelo
 const JUMP_VELOCITY := -250.0			# Potencia del salto
-const MAX_JUMP_TIME := 0.1				# Tiempo máximo para salto variable
+const MAX_JUMP_TIME := 0.2				# Tiempo máximo para salto variable
 const DOUBLE_JUMP_VELOCITY := -200.0	# El segundo salto sea inferior al primero
-const JUMP_FORCE := -200.0				# Fuerza aplicada mientras mantienes la tecla de salto
+const JUMP_FORCE := -350.0				# Fuerza aplicada mientras mantienes la tecla de salto
 const MAX_JUMPS := 2					# Número máximo de saltos (1 = normal, 2 = doble salto)
 
 const DROP_THROUGH_HOLD_TIME := 0.05 	# Tiempo mínimo que debes mantener abajo para poder caer
