@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animation: AnimatedSprite2D = $Animation
 
 # CONSTANTS
-const SPEED := 150.0					# Velocidad de su movimiento horizontal
+const SPEED := 100.0					# Velocidad de su movimiento horizontal
 const ACCELERATION := 900.0				# Aceleracion de sus movimientos horizontales
 const FRICTION := 1000.0				# Friccion de sus zapatos
 
@@ -87,7 +87,7 @@ func handle_jump_logic(delta: float) -> void:
 	##                                              └─[NO]──→ (no pasa nada)
 	###
 
-	# Bandera para saber si hicimos drop_through (evita ejecutar salto normal después)
+	# Bandera para saber si hicimos drop_through (evita salto normal después)
 	var did_drop_through := false
 
 	# Prioridad 1: Caer por plataforma si mantienes abajo un tiempo y saltas
@@ -115,7 +115,7 @@ func handle_jump_logic(delta: float) -> void:
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			jump_count += 1
 
-	# Salto variable: mantener fuerza mientras mantienes tecla y no pasas tiempo max
+	# Salto variable: mantener fuerza manteniendo tecla y no pasas tiempo max
 	if is_jumping:
 		jump_time += delta
 
@@ -133,32 +133,38 @@ func handle_jump_logic(delta: float) -> void:
 # HORIZONTAL MOVEMENT - Movimiento horizontal
 # =====================================================
 func handle_horizontal_movement(delta: float) -> void:
-	var direction := Input.get_axis("move_left", "move_right")
+	var raw := Input.get_axis("move_left", "move_right")
 
-	if direction != 0:
-		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
+	var direction := 0.0
+
+	# Si es teclado o Joystick digital
+	if raw == -1.0 or raw == 1.0:
+		direction = sign(raw)
 	else:
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+		# Joystick analogico → solo actúa si supera 0.5
+		if abs(raw) > 0.5:
+			direction = sign(raw)
+
+	velocity.x = move_toward(
+		velocity.x,
+		direction * SPEED,
+		ACCELERATION * delta if direction != 0 else FRICTION * delta
+	)
 
 
 # =====================================================
 # ANIMATION de KNIGHT - Funcion para el manejo de animaciones
 # =====================================================
 func update_animation() -> void:
-	var direction: float = Input.get_axis("move_left", "move_right")
-	animations_sheet(direction)
-
-
-func animations_sheet(direction: float) -> void:
 	if is_on_floor():
-		if direction == 0:
+		if abs(velocity.x) < 10.0:
 			animation.play("idle")
 		else:
 			animation.play("run")
 	else:
 		if velocity.y < 0:
 			animation.play("jump")
-		elif velocity.y > 0:
+		else:
 			animation.play("fall")
 
 
