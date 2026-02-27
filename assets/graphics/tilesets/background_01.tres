@@ -1,0 +1,19 @@
+[gd_resource type="TileSet" format=3 uid="uid://q2yxg7lm1ehd"]
+
+[ext_resource type="Texture2D" uid="uid://datykuht611is" path="res://assets/graphics/tilesets/background_01.png" id="1_dvfsw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8svm"]
+texture = ExtResource("1_dvfsw")
+0:0/0 = 0
+1:0/0 = 0
+2:1/size_in_atlas = Vector2i(2, 3)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 24, -16, 22, 16, 22, 16, 24)
+2:1/0/physics_layer_0/polygon_0/one_way = true
+2:0/size_in_atlas = Vector2i(2, 1)
+2:0/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_g8svm")

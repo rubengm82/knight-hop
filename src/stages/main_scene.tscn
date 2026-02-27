@@ -1,24 +1,15 @@
 [gd_scene format=3 uid="uid://b84vv6ek2an2"]
 
-[ext_resource type="PackedScene" uid="uid://c8ga3vp4ry8o4" path="res://src/stages/stage_01.tscn" id="1_ufamd"]
 [ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="2_l3epe"]
-[ext_resource type="PackedScene" uid="uid://bykwtetbrnnv0" path="res://src/items/coin.tscn" id="3_l3epe"]
-[ext_resource type="PackedScene" uid="uid://dcuweai4a4q70" path="res://src/enemies/slime_red.tscn" id="4_w4usf"]
+[ext_resource type="PackedScene" uid="uid://c752t7fwn8hrk" path="res://src/stages/stage_02.tscn" id="5_ia6yh"]
 
 [node name="MainScene" type="Node2D" unique_id=1897659467]
-
-[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("2_l3epe")]
-position = Vector2(35, 256)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=807637087]
 position = Vector2(224, 128)
 zoom = Vector2(3, 3)
 
-[node name="Coin" parent="." unique_id=304581339 instance=ExtResource("3_l3epe")]
-position = Vector2(246, 218)
+[node name="Stage_02" parent="." unique_id=1301223828 instance=ExtResource("5_ia6yh")]
 
-[node name="SlimeRed" parent="." unique_id=1103676922 instance=ExtResource("4_w4usf")]
-position = Vector2(198, 248)
-
-[node name="Stage_01" parent="." unique_id=900142613 instance=ExtResource("1_ufamd")]
-position = Vector2(0, 256)
+[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("2_l3epe")]
+position = Vector2(55, 174)

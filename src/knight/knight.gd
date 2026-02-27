@@ -187,6 +187,6 @@ func drop_through() -> void:
 		# Desactiva temporalmente la colisión con capa 1 para atravesar plataformas
 		#  Corregir para poner luego en la capa que sea solo de:
 		#	Plataforas de Descenso
-		set_collision_mask_value(1, false)
+		set_collision_mask_value(5, false)
 		await get_tree().create_timer(0.2).timeout
-		set_collision_mask_value(1, true)
+		set_collision_mask_value(5, true)
