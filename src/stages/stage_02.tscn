@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="4_nt4cv"]
 [ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="5_7tidt"]
 [ext_resource type="PackedScene" uid="uid://bykwtetbrnnv0" path="res://src/items/coin.tscn" id="7_h3xsu"]
+[ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="8_16frl"]
 
 [node name="Stage_02" type="Node2D" unique_id=1301223828]
 
@@ -60,3 +61,6 @@ collision_mask = 0
 position = Vector2(46, 82)
 collision_layer = 0
 collision_mask = 0
+
+[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("8_16frl")]
+position = Vector2(56, 173)

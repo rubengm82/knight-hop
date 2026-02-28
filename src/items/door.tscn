@@ -2,8 +2,29 @@
 
 [ext_resource type="Texture2D" uid="uid://u382rrtqa80d" path="res://assets/graphics/sprites/door.png" id="1_1rpbt"]
 [ext_resource type="Script" uid="uid://c62cjstk76e01" path="res://src/items/door.gd" id="1_oyypl"]
+[ext_resource type="AudioStream" uid="uid://cs0e6377ih8cv" path="res://assets/sfx/sfx/door_open_close.wav" id="2_door"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rpbt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fa10"]
+atlas = ExtResource("1_1rpbt")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vdmx"]
+atlas = ExtResource("1_1rpbt")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggquf"]
+atlas = ExtResource("1_1rpbt")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyo0"]
+atlas = ExtResource("1_1rpbt")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g415i"]
+atlas = ExtResource("1_1rpbt")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5oxv"]
 atlas = ExtResource("1_1rpbt")
 region = Rect2(0, 0, 32, 48)
 
@@ -35,8 +56,28 @@ region = Rect2(160, 0, 32, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1rpbt")
+"texture": SubResource("AtlasTexture_5fa10")
 }, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vdmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggquf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g415i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5oxv")
+}],
+"loop": false,
+"name": &"close",
+"speed": 14.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oyypl")
 }, {
@@ -55,8 +96,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gv1lm")
 }],
-"loop": true,
-"name": &"opened",
+"loop": false,
+"name": &"open",
 "speed": 6.0
 }]
 
@@ -70,9 +111,13 @@ script = ExtResource("1_oyypl")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1271412501]
 sprite_frames = SubResource("SpriteFrames_0fqdn")
-animation = &"opened"
-frame_progress = 0.9199459
+animation = &"close"
+frame = 5
+frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410758844]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1410758844]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_gwlkr")
+
+[node name="AudioDoor_open" type="AudioStreamPlayer" parent="." unique_id=161775150]
+stream = ExtResource("2_door")
