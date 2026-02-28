@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation: AnimatedSprite2D = $Animation
+@onready var audio_jump: AudioStreamPlayer = $AudioPlayer_jump
 
 # CONSTANTS
 const SPEED := 100.0					# Velocidad de su movimiento horizontal
@@ -105,12 +106,14 @@ func handle_jump_logic(delta: float) -> void:
 			is_jumping = true
 			jump_time = 0.0
 			velocity.y = JUMP_VELOCITY
+			audio_jump.play()
 			coyote_timer = 0.0
 			jump_count = 1
 
 		elif ENABLE_DOUBLE_JUMP and jump_count < MAX_JUMPS:
 			# Doble salto en el aire
 			is_jumping = true
+			audio_jump.play()
 			jump_time = 0.0
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			jump_count += 1
