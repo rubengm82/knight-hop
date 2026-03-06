@@ -16,7 +16,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("knight"):
 		coin_collected.emit()
 		animation.visible = false
-		collision_shape_2d.disabled = true
+		# Usar set_deferred para desactivar la colisión
+		collision_shape_2d.set_deferred("disabled", true)
 		audio_pickup.play()
 
 		# Esperar a que termine el audio antes de eliminar la instancia del coin
