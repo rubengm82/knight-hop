@@ -2,7 +2,7 @@ extends Node2D
 
 @export var niveles: Array[PackedScene]
 
-var _nivel_actual: int = 2
+var _nivel_actual: int = 1
 var _nivel_instanciado: Node
 
 
