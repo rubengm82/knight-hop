@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://w67ejoxcqh7d" path="res://src/items/coin.gd" id="1_5a4dj"]
 [ext_resource type="Texture2D" uid="uid://bwuktj4nn4pde" path="res://assets/graphics/sprites/coin_gold.png" id="1_yjgxs"]
+[ext_resource type="AudioStream" uid="uid://s66a4pmivubk" path="res://assets/sfx/sfx/pickupCoin.wav" id="2_vgtet"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5a4dj"]
 atlas = ExtResource("1_yjgxs")
@@ -70,8 +71,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjgxs"]
 size = Vector2(10, 10)
 
-[node name="Coin" type="StaticBody2D" unique_id=304581339]
+[node name="Coin" type="Area2D" unique_id=304581339]
+collision_layer = 0
 script = ExtResource("1_5a4dj")
+
+[node name="AudioCoin_pickup" type="AudioStreamPlayer" parent="." unique_id=1519969465]
+stream = ExtResource("2_vgtet")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1860286599]
 sprite_frames = SubResource("SpriteFrames_82u42")

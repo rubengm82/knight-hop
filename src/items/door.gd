@@ -1,48 +1,45 @@
-extends StaticBody2D
+extends Area2D
 
 @onready var animation: AnimatedSprite2D = $Animation
 @onready var audio_open: AudioStreamPlayer = $AudioDoor_open
+@onready var collision: CollisionShape2D = $Collision
 
-const ACTIVATION_DISTANCE := 50.0 # Distancia en px para activar la apertura
 var is_door_open := false
+var can_transition := false
 
+signal door_opened
 
 func _ready() -> void:
 	# Conectar la señal de animación terminada
 	animation.animation_finished.connect(_on_animation_finished)
-
-func _physics_process(_delta: float) -> void:
-	# Buscar al knight en la escena
-	var knight = get_tree().get_first_node_in_group("knight")
 	
-	if knight != null:
-		# Obtener la posición del CollisionShape2D de knight
-		var knight_collision = knight.get_node("Collision")
-		if knight_collision:
-			var knight_pos = knight.global_position + knight_collision.position
-			# Calcular la distancia entre la puerta y la colisión del knight
-			var distance := global_position.distance_to(knight_pos)
-			
-			# Si está a menos de ACTIVATION_DISTANCE píxeles, abrir la puerta
-			if distance <= ACTIVATION_DISTANCE:
-				if not is_door_open:
-					open_door()
-			# Si está a más de ACTIVATION_DISTANCE píxeles, cerrar la puerta
-			else:
-				if is_door_open:
-					close_door()
+	# Conectar la señal body_entered directamente en el nodo Door (Area2D)
+	body_entered.connect(_on_body_entered)
+	
+	# Iniciar con la puerta cerrada
+	animation.play("close")
+	is_door_open = false
+	# Desactivar la colisión inicialmente para que no pase el jugador
+	collision.set_deferred("disabled", true)
 
 func open_door() -> void:
-	is_door_open = true
-	# Reiniciar la animación al inicio antes de reproducir
-	animation.frame = 0
-	animation.play("open")
+	if not is_door_open:
+		is_door_open = true
+		animation.frame = 0
+		animation.play("open")
+		collision.set_deferred("disabled", false)
+		door_opened.emit()
 
 func close_door() -> void:
 	is_door_open = false
-	# Reiniciar la animación al inicio antes de reproducir
 	animation.play("close")
+	collision.set_deferred("disabled", true)
 	
 func _on_animation_finished() -> void:
-	# Reproducir sonido cuando termine la animación
 	audio_open.play()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("knight") and is_door_open:
+		var nivel = get_parent()
+		if nivel.has_method("next_level"):
+			nivel.next_level()

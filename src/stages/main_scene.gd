@@ -10,6 +10,10 @@ func _ready() -> void:
 	crear_nivel(_nivel_actual)
 
 func crear_nivel(numero_nivel: int):
+	# Eliminar el nivel anterior si existe
+	if _nivel_instanciado != null:
+		eliminar_nivel()
+	
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child.call_deferred(_nivel_instanciado)
 
