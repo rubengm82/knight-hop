@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="1_nlesd"]
 [ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="2_35fhi"]
 [ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="2_cxpi2"]
-[ext_resource type="Script" uid="uid://cvann72jpc3fs" path="res://src/stages/stage_controller.gd" id="3_script"]
+[ext_resource type="Script" path="res://src/stages/stage_controller.gd" id="3_script"]
+[ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="6_aqq7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlesd"]
 size = Vector2(448, 40)
@@ -16,7 +17,6 @@ size = Vector2(20, 93)
 size = Vector2(20, 93.5)
 
 [node name="Stage_01" type="Node2D" unique_id=900142613]
-position = Vector2(0, 256)
 script = ExtResource("3_script")
 
 [node name="AudioBG_music" type="AudioStreamPlayer" parent="." unique_id=558959499]
@@ -24,8 +24,12 @@ stream = ExtResource("2_35fhi")
 autoplay = true
 parameters/looping = true
 
+[node name="TileMapLayer_stage" type="TileMapLayer" parent="." unique_id=1681007489]
+tile_map_data = PackedByteArray(0, 0, 8, 0, 15, 0, 0, 0, 2, 0, 1, 0, 0, 0, 15, 0, 15, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+tile_set = ExtResource("6_aqq7q")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=174715223]
-position = Vector2(0, -1)
+position = Vector2(0, 255)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1013656163]
 position = Vector2(224, 21)
@@ -40,22 +44,22 @@ position = Vector2(458, -45.75)
 shape = SubResource("RectangleShape2D_gitgc")
 
 [node name="Coin1" parent="." unique_id=304581339 instance=ExtResource("1_gitgc")]
-position = Vector2(106, -12)
+position = Vector2(106, 244)
 
 [node name="Coin2" parent="." unique_id=1370695102 instance=ExtResource("1_gitgc")]
-position = Vector2(162, -12)
+position = Vector2(162, 244)
 
 [node name="Coin3" parent="." unique_id=1164496039 instance=ExtResource("1_gitgc")]
-position = Vector2(215, -12)
+position = Vector2(215, 244)
 
 [node name="Coin4" parent="." unique_id=840262014 instance=ExtResource("1_gitgc")]
-position = Vector2(269, -12)
+position = Vector2(269, 244)
 
 [node name="Coin5" parent="." unique_id=689882403 instance=ExtResource("1_gitgc")]
-position = Vector2(321, -12)
+position = Vector2(321, 244)
 
 [node name="Door" parent="." unique_id=740232990 instance=ExtResource("2_cxpi2")]
-position = Vector2(415, -24)
+position = Vector2(415, 232)
 
 [node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("1_nlesd")]
-position = Vector2(28, 0)
+position = Vector2(28, 256)

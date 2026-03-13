@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://n2hu7uwbbe0r"]
 
 [ext_resource type="FontFile" uid="uid://c1tp24nj0cg4n" path="res://assets/fonts/arcadeclassic.regular.ttf" id="1_kbqco"]
-[ext_resource type="Script" uid="uid://b7qjjnwn8m0xn" path="res://src/items/time_score.gd" id="1_vul7q"]
+[ext_resource type="Script" path="res://src/items/time_score.gd" id="1_vul7q"]
 
 [node name="TimeScore" type="Node2D" unique_id=910344870]
 script = ExtResource("1_vul7q")
 
 [node name="Label_time" type="Label" parent="." unique_id=531440155]
 offset_left = 389.0
-offset_top = -2.0
+offset_top = -1.0
 offset_right = 411.0
-offset_bottom = 10.0
+offset_bottom = 11.0
 theme_override_fonts/font = ExtResource("1_kbqco")
 theme_override_font_sizes/font_size = 9
-text = "TIME:"
+text = "TIME"
 
 [node name="Label_seconds" type="Label" parent="." unique_id=1433649769]
 offset_left = 414.0
