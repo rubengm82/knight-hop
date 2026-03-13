@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animation: AnimatedSprite2D = $Animation
 @onready var audio_jump: AudioStreamPlayer = $AudioPlayer_jump
-@onready var area2d: Area2D = $Area2D
+@onready var area2d: Area2D = $Area2D_Damage
 
 # CONSTANTS
 const SPEED := 100.0					# Velocidad de su movimiento horizontal
