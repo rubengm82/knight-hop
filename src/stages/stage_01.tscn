@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="1_nlesd"]
 [ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="2_35fhi"]
 [ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="2_cxpi2"]
-[ext_resource type="Script" path="res://src/stages/stage_controller.gd" id="3_script"]
+[ext_resource type="Script" uid="uid://cvann72jpc3fs" path="res://src/stages/stage_controller.gd" id="3_script"]
 [ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="6_aqq7q"]
+[ext_resource type="PackedScene" uid="uid://dcuweai4a4q70" path="res://src/enemies/slime_red.tscn" id="7_1fgvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlesd"]
 size = Vector2(448, 40)
@@ -63,3 +64,6 @@ position = Vector2(415, 232)
 
 [node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("1_nlesd")]
 position = Vector2(28, 256)
+
+[node name="SlimeRed" parent="." unique_id=1103676922 instance=ExtResource("7_1fgvx")]
+position = Vector2(66, 248)

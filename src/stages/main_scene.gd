@@ -20,6 +20,6 @@ func crear_nivel(numero_nivel: int):
 func eliminar_nivel():
 	_nivel_instanciado.queue_free()
 	
-func reinicar_nivel():
+func reiniciar_nivel():
 	eliminar_nivel()
 	crear_nivel.call_deferred(_nivel_actual)

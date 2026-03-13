@@ -40,7 +40,10 @@ func _physics_process(delta: float) -> void:
 
 	# MOVIMIENTO
 	move_and_slide()
-	
+
+	# CHECK FOR HAZARDS (spikes and enemies)
+	check_hazard_collisions()
+
 	# VISUAL
 	update_animation()
 	update_flip()   
@@ -193,3 +196,29 @@ func drop_through() -> void:
 		set_collision_mask_value(5, false)
 		await get_tree().create_timer(0.2).timeout
 		set_collision_mask_value(5, true)
+
+
+# =====================================================
+# CHECK HAZARD COLLISIONS - Detectar pinchos y enemigos
+# =====================================================
+func check_hazard_collisions() -> void:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		# Verificar que sea un objeto de colisión (no TileMapLayer)
+		# y que sea un hazard (layer 2 = pinchos, grupo "enemies" = enemigos)
+		if collider is StaticBody2D or collider is CharacterBody2D or collider is RigidBody2D:
+			if collider.get_collision_layer_value(2) or collider.is_in_group("enemies"):
+				smorir()
+				break
+
+
+# =====================================================
+# MORIR - Reiniciar el nivel al tocar hazards
+# =====================================================
+func smorir() -> void:
+	# Obtener MainScene (padre del padre: Knight -> StageController -> MainScene)
+	var main_scene = get_parent().get_parent()
+	if main_scene.has_method("reiniciar_nivel"):
+		main_scene.reiniciar_nivel()
