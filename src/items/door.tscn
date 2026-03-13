@@ -106,6 +106,7 @@ size = Vector2(4, 2)
 
 [node name="Door" type="Area2D" unique_id=740232990]
 collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_oyypl")
 
 [node name="AudioDoor_open" type="AudioStreamPlayer" parent="." unique_id=161775150]
