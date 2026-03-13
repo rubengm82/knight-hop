@@ -1,20 +1,12 @@
-[gd_scene format=3 uid="uid://c8ga3vp4ry8o4"]
+[gd_scene format=4 uid="uid://c8ga3vp4ry8o4"]
 
 [ext_resource type="PackedScene" uid="uid://bykwtetbrnnv0" path="res://src/items/coin.tscn" id="1_gitgc"]
 [ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="1_nlesd"]
 [ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="2_35fhi"]
 [ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="2_cxpi2"]
-[ext_resource type="Script" path="res://src/stages/stage_controller.gd" id="3_script"]
+[ext_resource type="Script" uid="uid://cvann72jpc3fs" path="res://src/stages/stage_controller.gd" id="3_script"]
 [ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="6_aqq7q"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlesd"]
-size = Vector2(448, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_twm8o"]
-size = Vector2(20, 93)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gitgc"]
-size = Vector2(20, 93.5)
+[ext_resource type="PackedScene" uid="uid://dcuweai4a4q70" path="res://src/enemies/slime_red.tscn" id="7_1fgvx"]
 
 [node name="Stage_01" type="Node2D" unique_id=900142613]
 script = ExtResource("3_script")
@@ -25,41 +17,30 @@ autoplay = true
 parameters/looping = true
 
 [node name="TileMapLayer_stage" type="TileMapLayer" parent="." unique_id=1681007489]
-tile_map_data = PackedByteArray(0, 0, 8, 0, 15, 0, 0, 0, 2, 0, 1, 0, 0, 0, 15, 0, 15, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAIAA4AAAACAAEAAAAPAA4AAAACAAEAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAAZAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAbAA4AAAAAAAAAAAAbAA0AAAAAAAAAAAAbAAwAAAAAAAAAAAAbAAsAAAAAAAAAAAAbAAoAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAoAAAAAAAAAAAAGAA8AAAAAAAAAAAA=")
 tile_set = ExtResource("6_aqq7q")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=174715223]
-position = Vector2(0, 255)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1013656163]
-position = Vector2(224, 21)
-shape = SubResource("RectangleShape2D_nlesd")
-
-[node name="CollisionShape2D_izq" type="CollisionShape2D" parent="StaticBody2D" unique_id=1208419912]
-position = Vector2(-10, -45.5)
-shape = SubResource("RectangleShape2D_twm8o")
-
-[node name="CollisionShape2D_der" type="CollisionShape2D" parent="StaticBody2D" unique_id=756062617]
-position = Vector2(458, -45.75)
-shape = SubResource("RectangleShape2D_gitgc")
-
 [node name="Coin1" parent="." unique_id=304581339 instance=ExtResource("1_gitgc")]
-position = Vector2(106, 244)
+position = Vector2(106, 228)
 
 [node name="Coin2" parent="." unique_id=1370695102 instance=ExtResource("1_gitgc")]
-position = Vector2(162, 244)
+position = Vector2(162, 228)
 
 [node name="Coin3" parent="." unique_id=1164496039 instance=ExtResource("1_gitgc")]
-position = Vector2(215, 244)
+position = Vector2(215, 228)
 
 [node name="Coin4" parent="." unique_id=840262014 instance=ExtResource("1_gitgc")]
-position = Vector2(269, 244)
+position = Vector2(269, 228)
 
 [node name="Coin5" parent="." unique_id=689882403 instance=ExtResource("1_gitgc")]
-position = Vector2(321, 244)
+position = Vector2(321, 228)
 
 [node name="Door" parent="." unique_id=740232990 instance=ExtResource("2_cxpi2")]
-position = Vector2(415, 232)
+position = Vector2(392, 216)
 
 [node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("1_nlesd")]
-position = Vector2(28, 256)
+position = Vector2(28, 240)
+collision_mask = 19
+
+[node name="SlimeRed" parent="." unique_id=1103676922 instance=ExtResource("7_1fgvx")]
+position = Vector2(69, 232)
