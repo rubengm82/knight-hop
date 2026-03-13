@@ -26,8 +26,6 @@ var jump_count := 0						# Contador de saltos realizados
 var coyote_timer := 0.0					# Contador para el coyote time
 var down_hold_timer := 0.0				# Cuenta cuánto tiempo llevas apretando abajo
 
-func _ready() -> void:
-	area2d.body_entered.connect(_on_area_2d_body_entered)
 
 
 # =====================================================
@@ -199,9 +197,12 @@ func drop_through() -> void:
 		set_collision_mask_value(5, true)
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+# =====================================================
+# AREA ENTERED - Cuando a Knight le atraviesa layers seleccinados
+# =====================================================
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	# Obtener la escena principal para reiniciar el nivel
 	var main_scene = get_tree().root.get_node("MainScene")
 	
-	if main_scene and main_scene.has_method("reinicar_nivel"):
-		main_scene.reinicar_nivel()
+	if main_scene and main_scene.has_method("reiniciar_nivel"):
+		main_scene.reiniciar_nivel()
