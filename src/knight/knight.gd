@@ -200,5 +200,8 @@ func drop_through() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("Toque pinchos")
-	pass # Replace with function body.
+	# Obtener la escena principal para reiniciar el nivel
+	var main_scene = get_tree().root.get_node("MainScene")
+	
+	if main_scene and main_scene.has_method("reinicar_nivel"):
+		main_scene.reinicar_nivel()
