@@ -196,6 +196,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o53dj"]
 size = Vector2(10, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqevv"]
+size = Vector2(10, 20)
+
 [node name="Knight" type="CharacterBody2D" unique_id=1393028123 groups=["knight"]]
 collision_mask = 17
 script = ExtResource("1_j45nf")
@@ -212,3 +215,13 @@ shape = SubResource("RectangleShape2D_o53dj")
 [node name="AudioPlayer_jump" type="AudioStreamPlayer" parent="." unique_id=1786569880]
 stream = ExtResource("3_o53dj")
 volume_db = -4.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=126679164]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=32923217]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_aqevv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

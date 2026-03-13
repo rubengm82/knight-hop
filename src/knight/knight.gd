@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animation: AnimatedSprite2D = $Animation
 @onready var audio_jump: AudioStreamPlayer = $AudioPlayer_jump
+@onready var area2d: Area2D = $Area2D
 
 # CONSTANTS
 const SPEED := 100.0					# Velocidad de su movimiento horizontal
@@ -24,6 +25,9 @@ var is_jumping := false					# Estas saltando?
 var jump_count := 0						# Contador de saltos realizados
 var coyote_timer := 0.0					# Contador para el coyote time
 var down_hold_timer := 0.0				# Cuenta cuánto tiempo llevas apretando abajo
+
+func _ready() -> void:
+	area2d.body_entered.connect(_on_area_2d_body_entered)
 
 
 # =====================================================
@@ -193,3 +197,8 @@ func drop_through() -> void:
 		set_collision_mask_value(5, false)
 		await get_tree().create_timer(0.2).timeout
 		set_collision_mask_value(5, true)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("Toque pinchos")
+	pass # Replace with function body.
