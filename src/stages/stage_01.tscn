@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="1_nlesd"]
 [ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="2_35fhi"]
 [ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="2_cxpi2"]
+[ext_resource type="Texture2D" uid="uid://c6yyab7jlatkv" path="res://assets/graphics/images/bg_tutorial_01.png" id="3_migh0"]
 [ext_resource type="Script" uid="uid://cvann72jpc3fs" path="res://src/stages/stage_controller.gd" id="3_script"]
 [ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="6_aqq7q"]
-[ext_resource type="PackedScene" uid="uid://dcuweai4a4q70" path="res://src/enemies/slime_red.tscn" id="7_1fgvx"]
+[ext_resource type="FontFile" uid="uid://t22u46rgptnc" path="res://assets/fonts/ARCADEPI.TTF" id="8_migh0"]
 
 [node name="Stage_01" type="Node2D" unique_id=900142613]
 script = ExtResource("3_script")
@@ -16,30 +17,49 @@ stream = ExtResource("2_35fhi")
 autoplay = true
 parameters/looping = true
 
+[node name="BgTutorial01" type="Sprite2D" parent="." unique_id=1182369435]
+position = Vector2(224, 128)
+texture = ExtResource("3_migh0")
+
 [node name="TileMapLayer_stage" type="TileMapLayer" parent="." unique_id=1681007489]
-tile_map_data = PackedByteArray("AAAIAA4AAAACAAEAAAAPAA4AAAACAAEAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAAZAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAbAA4AAAAAAAAAAAAbAA0AAAAAAAAAAAAbAAwAAAAAAAAAAAAbAAsAAAAAAAAAAAAbAAoAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAoAAAAAAAAAAAAGAA8AAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAPAA4AAAACAAEAAAABAA8AAAAAAAAAAAACAA8AAAAAAAMAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAADAAIAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAADAAIAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAADAAIAAAATAA8AAAADAAIAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAADAAIAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAAZAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAAAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAD//w0AAAAAAAAAAAD//w4AAAAAAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAcAA4AAAAAAAAAAAAYAAsAAAADAAIAAAAZAAsAAAAAAAAAAAAaAAsAAAADAAIAAAAaAAwAAAAAAAAAAAAaAA0AAAAAAAAAAAAaAA4AAAAAAAAAAAAbAA4AAAAAAAAAAAAbAA0AAAAAAAMAAAAbAAwAAAAAAAAAAAAbAAsAAAAAAAAAAAAHAA4AAAACAAEAAAAAAAwAAAAAAAAAAAABAA0AAAAAAAAAAAACAA4AAAADAAIAAAABAA4AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAMAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAAcAAkAAAAAAAAAAAAcAAgAAAAAAAAAAAAcAAcAAAAAAAAAAAAcAAYAAAAAAAAAAAAcAAUAAAAAAAAAAAAcAAQAAAAAAAAAAAAcAAMAAAAAAAAAAAAcAAIAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAA=")
 tile_set = ExtResource("6_aqq7q")
 
 [node name="Coin1" parent="." unique_id=304581339 instance=ExtResource("1_gitgc")]
-position = Vector2(106, 228)
+position = Vector2(85, 228)
 
 [node name="Coin2" parent="." unique_id=1370695102 instance=ExtResource("1_gitgc")]
-position = Vector2(162, 228)
+position = Vector2(160, 228)
 
 [node name="Coin3" parent="." unique_id=1164496039 instance=ExtResource("1_gitgc")]
-position = Vector2(215, 228)
+position = Vector2(212, 228)
 
 [node name="Coin4" parent="." unique_id=840262014 instance=ExtResource("1_gitgc")]
-position = Vector2(269, 228)
+position = Vector2(283, 228)
 
 [node name="Coin5" parent="." unique_id=689882403 instance=ExtResource("1_gitgc")]
-position = Vector2(321, 228)
+position = Vector2(336, 228)
 
 [node name="Door" parent="." unique_id=740232990 instance=ExtResource("2_cxpi2")]
-position = Vector2(392, 216)
-
-[node name="SlimeRed" parent="." unique_id=1103676922 instance=ExtResource("7_1fgvx")]
-position = Vector2(69, 232)
+position = Vector2(400, 216)
 
 [node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("1_nlesd")]
-position = Vector2(33, 240)
+position = Vector2(8, 192)
+
+[node name="Label_Historia" type="Label" parent="." unique_id=600802905]
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 433.0
+offset_bottom = 357.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_migh0")
+theme_override_font_sizes/font_size = 10
+text = "En las estancias de la mazmorra, el valiente aventurero Knight debera reunir cinco monedas doradas para que la antigua puerta se abra y le permita avanzar.
+
+Entre sombras acechan enemigos y trampas traicioneras que lo obligaran a empezar de nuevo si cae en ellas, y aunque porta una espada, nunca la usara, su noble corazon rehuye la violencia.
+
+Solo quien supere cada desafio alcanzara el final y podra liberar a la princesa de lo mas profundo de estas oscuras mazmorras…
+                                  ¡Buena suerte aventurero!"
+horizontal_alignment = 3
+autowrap_mode = 2
+justification_flags = 35
