@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var audio_jump: AudioStreamPlayer = $AudioPlayer_jump
 @onready var area2d: Area2D = $Area2D_Damage
 
+# Cargar la escena de polvo para el salto
+var jump_dust_scene = preload("res://src/knight/knight_jump_dirt.tscn")
+
 # CONSTANTS
 const SPEED := 100.0					# Velocidad de su movimiento horizontal
 const ACCELERATION := 900.0				# Aceleracion de sus movimientos horizontales
@@ -111,6 +114,8 @@ func handle_jump_logic(delta: float) -> void:
 			audio_jump.play()
 			coyote_timer = 0.0
 			jump_count = 1
+			# Crear efecto de polvo al saltar
+			_crear_polvo_salto()
 
 		elif ENABLE_DOUBLE_JUMP and jump_count < MAX_JUMPS:
 			# Doble salto en el aire
@@ -206,3 +211,20 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	
 	if main_scene and main_scene.has_method("reiniciar_nivel"):
 		main_scene.reiniciar_nivel()
+
+
+# =====================================================
+# DUST EFFECT - Crear efecto de polvo al saltar
+# =====================================================
+func _crear_polvo_salto() -> void:
+	var polvo = jump_dust_scene.instantiate()
+	get_parent().add_child(polvo)
+	# Posicionar el polvo en los pies del knight (ajustar -16 según sea necesario)
+	polvo.global_position = Vector2(global_position.x, global_position.y - 16)
+	# Reproducir la animación
+	polvo.play("jump_dirt")
+	# Conectar la señal de animación terminada para borrar el polvo
+	polvo.animation_finished.connect(_on_polvo_animacion_terminada.bind(polvo))
+
+func _on_polvo_animacion_terminada(polvo: AnimatedSprite2D) -> void:
+	polvo.queue_free()
