@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cvann72jpc3fs" path="res://src/stages/stage_controller.gd" id="3_script"]
 [ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="6_aqq7q"]
 [ext_resource type="FontFile" uid="uid://t22u46rgptnc" path="res://assets/fonts/ARCADEPI.TTF" id="8_migh0"]
+[ext_resource type="Script" uid="uid://dickc2x30jy7f" path="res://src/stages/text_revealer.gd" id="9_script"]
 
 [node name="Stage_01" type="Node2D" unique_id=900142613]
 script = ExtResource("3_script")
@@ -47,10 +48,10 @@ position = Vector2(400, 216)
 position = Vector2(8, 192)
 
 [node name="Label_Historia" type="Label" parent="." unique_id=600802905]
-offset_left = 18.0
-offset_top = 16.0
-offset_right = 434.0
-offset_bottom = 357.0
+offset_left = 12.0
+offset_top = 15.0
+offset_right = 440.0
+offset_bottom = 148.0
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("8_migh0")
 theme_override_font_sizes/font_size = 10
@@ -60,6 +61,6 @@ Entre sombras acechan enemigos y trampas traicioneras que lo obligaran a empezar
 
 Solo quien supere cada desafio alcanzara el final y podra liberar a la princesa de lo mas profundo de estas oscuras mazmorras…
                                   ¡Buena suerte aventurero!"
-horizontal_alignment = 3
 autowrap_mode = 2
 justification_flags = 35
+script = ExtResource("9_script")
