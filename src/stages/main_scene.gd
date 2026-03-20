@@ -4,6 +4,7 @@ extends Node2D
 
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
+@onready var time_score = $TimeScore
 
 
 func _ready() -> void:
@@ -30,6 +31,21 @@ func crear_nivel(numero_nivel: int):
 	
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child.call_deferred(_nivel_instanciado)
+	
+	# Configurar el timer según el nivel
+	_configurar_timer(numero_nivel)
+
+func _configurar_timer(numero_nivel: int) -> void:
+	if numero_nivel == 1:
+		# Nivel 1 (tutorial): mostrar 0 y no contar
+		time_score.seconds = 0
+		time_score.activar_contador = false
+		time_score.get_node("Label_seconds").text = "0"
+		time_score.get_node("Timer").stop()
+	elif numero_nivel == 2 and not time_score.activar_contador:
+		# Solo la primera vez que pasamos al nivel 2: iniciar contador
+		time_score.reiniciar_contador()
+	# Si ya estaba contando, sigue contando desde donde estaba
 
 func eliminar_nivel():
 	_nivel_instanciado.queue_free()
