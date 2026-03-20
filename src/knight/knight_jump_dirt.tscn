@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bn6jw11bn171r"]
+
+[ext_resource type="Texture2D" uid="uid://cyepi1qqqo35r" path="res://assets/graphics/sprites/knight_jumpdirt.png" id="1_1p04e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouafi"]
+atlas = ExtResource("1_1p04e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwju0"]
+atlas = ExtResource("1_1p04e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6km5"]
+atlas = ExtResource("1_1p04e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrxtc"]
+atlas = ExtResource("1_1p04e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33yok"]
+atlas = ExtResource("1_1p04e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0kyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouafi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwju0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6km5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrxtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33yok")
+}],
+"loop": false,
+"name": &"jump_dirt",
+"speed": 10.0
+}]
+
+[node name="KnightJumpDirt" type="AnimatedSprite2D" unique_id=868715460]
+sprite_frames = SubResource("SpriteFrames_f0kyk")
+animation = &"jump_dirt"
