@@ -5,9 +5,12 @@ extends Node2D
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
 @onready var time_score = $TimeScore
+@onready var fade_transition = $FadeTransition
 
 
 func _ready() -> void:
+	# Conectar la señal de transición completada
+	fade_transition.transicion_completada.connect(_on_transicion_completada)
 	crear_nivel(_nivel_actual)
 
 func _input(event: InputEvent) -> void:
@@ -28,6 +31,9 @@ func crear_nivel(numero_nivel: int):
 	# Eliminar el nivel anterior si existe
 	if _nivel_instanciado != null:
 		eliminar_nivel()
+	
+	# Iniciar la transición de fundido (bloquea al jugador)
+	fade_transition.iniciar_fundido()
 	
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child.call_deferred(_nivel_instanciado)
@@ -53,3 +59,13 @@ func eliminar_nivel():
 func reiniciar_nivel():
 	eliminar_nivel()
 	crear_nivel.call_deferred(_nivel_actual)
+
+# Called when the fade transition completes
+func _on_transicion_completada() -> void:
+	# Buscar el knight en el nivel actual y habilitar movimiento
+	if _nivel_instanciado != null:
+		var knights = _nivel_instanciado.get_tree().get_nodes_in_group("knight")
+		for knight in knights:
+			if knight.has_method("set_puede_moverse"):
+				knight.set_puede_moverse(true)
+	print("Transición completada - Jugador puede moverse")

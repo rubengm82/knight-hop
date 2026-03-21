@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b84vv6ek2an2"]
 
-[ext_resource type="Script" path="res://src/stages/main_scene.gd" id="1_l3epe"]
+[ext_resource type="Script" uid="uid://cch6v5e3xyqtt" path="res://src/stages/main_scene.gd" id="1_l3epe"]
 [ext_resource type="PackedScene" uid="uid://n2hu7uwbbe0r" path="res://src/items/time_score.tscn" id="2_ufamd"]
 [ext_resource type="PackedScene" uid="uid://c8ga3vp4ry8o4" path="res://src/stages/stage_01.tscn" id="2_w4usf"]
 [ext_resource type="PackedScene" uid="uid://c752t7fwn8hrk" path="res://src/stages/stage_02.tscn" id="5_ia6yh"]
+[ext_resource type="Script" uid="uid://c43pmgbtlns32" path="res://src/ui/fade_transition.gd" id="6_fade"]
 
 [node name="MainScene" type="Node2D" unique_id=1897659467]
 script = ExtResource("1_l3epe")
@@ -14,3 +15,14 @@ position = Vector2(224, 128)
 
 [node name="TimeScore" parent="." unique_id=910344870 instance=ExtResource("2_ufamd")]
 z_index = 1
+
+[node name="FadeTransition" type="ColorRect" parent="." unique_id=1234567890]
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_fade")

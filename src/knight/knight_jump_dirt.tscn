@@ -46,5 +46,7 @@ animations = [{
 }]
 
 [node name="KnightJumpDirt" type="AnimatedSprite2D" unique_id=868715460]
+position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(0.75000006, 1)
 sprite_frames = SubResource("SpriteFrames_f0kyk")
 animation = &"jump_dirt"

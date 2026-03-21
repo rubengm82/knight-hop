@@ -29,6 +29,16 @@ var jump_count := 0						# Contador de saltos realizados
 var coyote_timer := 0.0					# Contador para el coyote time
 var down_hold_timer := 0.0				# Cuenta cuánto tiempo llevas apretando abajo
 
+# Control de movimiento durante transiciones
+var puede_moverse := false				# Si false, no se puede mover (durante transición)
+
+
+# =====================================================
+# SETTER - Habilitar/deshabilitar movimiento
+# =====================================================
+func set_puede_moverse(valor: bool) -> void:
+	puede_moverse = valor
+
 
 
 # =====================================================
@@ -143,6 +153,12 @@ func handle_jump_logic(delta: float) -> void:
 # HORIZONTAL MOVEMENT - Movimiento horizontal
 # =====================================================
 func handle_horizontal_movement(delta: float) -> void:
+	# Si no puede moverse (durante transición), no procesar input
+	if not puede_moverse:
+		# Aplicar fricción para detener al jugador
+		velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
+		return
+	
 	var raw := Input.get_axis("move_left", "move_right")
 
 	var direction := 0.0
