@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://pa0g8to3sy6l"]
+
+[ext_resource type="AudioStream" uid="uid://bpx8lf8tbdt0u" path="res://assets/sfx/music/presentacion.ogg" id="2_smtcx"]
+[ext_resource type="Texture2D" uid="uid://w28npn0v22qc" path="res://assets/graphics/images/final_stage_px_01.png" id="3_7yyi8"]
+[ext_resource type="FontFile" uid="uid://t22u46rgptnc" path="res://assets/fonts/ARCADEPI.TTF" id="7_ajtd0"]
+[ext_resource type="Script" uid="uid://dickc2x30jy7f" path="res://src/stages/text_revealer.gd" id="8_dec5o"]
+
+[node name="Stage_Final" type="Node2D" unique_id=900142613]
+
+[node name="AudioBG_music" type="AudioStreamPlayer" parent="." unique_id=558959499]
+stream = ExtResource("2_smtcx")
+autoplay = true
+parameters/looping = true
+
+[node name="FinalStagePx01" type="Sprite2D" parent="." unique_id=1028885865]
+position = Vector2(224, 128)
+texture = ExtResource("3_7yyi8")
+
+[node name="Label_Historia" type="Label" parent="." unique_id=600802905]
+offset_left = 11.0
+offset_top = 80.0
+offset_right = 222.0
+offset_bottom = 180.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7_ajtd0")
+theme_override_font_sizes/font_size = 10
+text = "Tras desafiar incontables peligros, el valiente aventurero Knight logro reencontrarse con su amada princesa, y juntos sellaron un destino eterno, mas alla de las sombras que una vez los separaron.
+
+                 FIN"
+autowrap_mode = 2
+justification_flags = 35
+script = ExtResource("8_dec5o")

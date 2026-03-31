@@ -48,6 +48,10 @@ func _configurar_timer(numero_nivel: int) -> void:
 		time_score.activar_contador = false
 		time_score.get_node("Label_seconds").text = "0"
 		time_score.get_node("Timer").stop()
+	elif numero_nivel == niveles.size():
+		# Último nivel: detener el contador de tiempo
+		time_score.activar_contador = false
+		time_score.get_node("Timer").stop()
 	elif numero_nivel == 2 and not time_score.activar_contador:
 		# Solo la primera vez que pasamos al nivel 2: iniciar contador
 		time_score.reiniciar_contador()

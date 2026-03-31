@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://cch6v5e3xyqtt" path="res://src/stages/main_scene.gd" id="1_l3epe"]
 [ext_resource type="PackedScene" uid="uid://n2hu7uwbbe0r" path="res://src/items/time_score.tscn" id="2_ufamd"]
 [ext_resource type="PackedScene" uid="uid://c8ga3vp4ry8o4" path="res://src/stages/stage_01.tscn" id="2_w4usf"]
+[ext_resource type="PackedScene" uid="uid://pa0g8to3sy6l" path="res://src/stages/stage_final.tscn" id="4_pcy8l"]
 [ext_resource type="PackedScene" uid="uid://c752t7fwn8hrk" path="res://src/stages/stage_02.tscn" id="5_ia6yh"]
 [ext_resource type="Script" uid="uid://c43pmgbtlns32" path="res://src/ui/fade_transition.gd" id="6_fade"]
 
 [node name="MainScene" type="Node2D" unique_id=1897659467]
 script = ExtResource("1_l3epe")
-niveles = Array[PackedScene]([ExtResource("2_w4usf"), ExtResource("5_ia6yh")])
+niveles = Array[PackedScene]([ExtResource("2_w4usf"), ExtResource("5_ia6yh"), ExtResource("4_pcy8l")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=807637087]
 position = Vector2(224, 128)
