@@ -30,7 +30,7 @@ var coyote_timer := 0.0					# Contador para el coyote time
 var down_hold_timer := 0.0				# Cuenta cuánto tiempo llevas apretando abajo
 
 # Control de movimiento durante transiciones
-var puede_moverse := false				# Si false, no se puede mover (durante transición)
+var puede_moverse := true				# Si false, no se puede mover (durante transición)
 
 
 # =====================================================
