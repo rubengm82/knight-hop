@@ -219,14 +219,21 @@ func drop_through() -> void:
 
 
 # =====================================================
-# AREA ENTERED - Cuando a Knight le atraviesa layers seleccinados
+# AREA ENTERED - Cuando a Knight le atraviesa layers seleccionados
 # =====================================================
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	# Obtener la escena principal para reiniciar el nivel
-	var main_scene = get_tree().root.get_node("MainScene")
+	# Buscar la escena principal
+	var main_scene = _buscar_main_scene()
 	
 	if main_scene and main_scene.has_method("reiniciar_nivel"):
 		main_scene.reiniciar_nivel()
+	else:
+		# Fallback: recargar la escena actual
+		get_tree().call_deferred("reload_current_scene")
+
+func _buscar_main_scene() -> Node:
+	# Buscar MainScene usando find_child (busca recursivamente)
+	return get_tree().root.find_child("MainScene", true, false)
 
 
 # =====================================================
