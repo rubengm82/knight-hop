@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://rav5i0ad42jq"]
 
 [ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="1_h33mi"]
+[ext_resource type="Script" uid="uid://i4cgp5ytrqll" path="res://src/stages/stage_pasillo_princess.gd" id="1_xbrw8"]
 [ext_resource type="Texture2D" uid="uid://bkf0dfn8h0mls" path="res://assets/graphics/images/bg_dungeon_texture.png" id="2_xbrw8"]
 [ext_resource type="TileSet" uid="uid://q2yxg7lm1ehd" path="res://assets/graphics/tilesets/background_01.tres" id="3_vnd7s"]
 [ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="4_67gb0"]
@@ -11,6 +12,7 @@
 size = Vector2(16, 80)
 
 [node name="Stage_pasillo_princess" type="Node2D" unique_id=1301223828]
+script = ExtResource("1_xbrw8")
 
 [node name="AudioBG_music" type="AudioStreamPlayer" parent="." unique_id=1160628703]
 stream = ExtResource("1_h33mi")
@@ -32,10 +34,15 @@ tile_set = ExtResource("4_67gb0")
 position = Vector2(24, 240)
 
 [node name="Princess" parent="." unique_id=363170649 instance=ExtResource("6_yswp3")]
-position = Vector2(394, 109)
+position = Vector2(394, 110)
 
 [node name="Area2D_goto_finalStage" type="Area2D" parent="." unique_id=1153433879]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_goto_finalStage" unique_id=513319909]
 position = Vector2(264, 200)
 shape = SubResource("RectangleShape2D_hohyh")
+
+[connection signal="area_entered" from="Area2D_goto_finalStage" to="Princess" method="_on_area_2d_goto_final_stage_area_entered"]
+[connection signal="body_entered" from="Area2D_goto_finalStage" to="Princess" method="_on_area_2d_goto_final_stage_body_entered"]

@@ -204,7 +204,7 @@ collision_layer = 4
 collision_mask = 17
 script = ExtResource("1_j45nf")
 
-[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1215023348]
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1215023348 groups=["knight"]]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_37djv")
 animation = &"idle"
