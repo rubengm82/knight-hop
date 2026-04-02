@@ -7,9 +7,10 @@
 [ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="4_67gb0"]
 [ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="5_g2ead"]
 [ext_resource type="PackedScene" uid="uid://busr5o2c3k5xp" path="res://src/items/princess.tscn" id="6_yswp3"]
+[ext_resource type="PackedScene" uid="uid://dhm4wyuj2bfhr" path="res://src/items/flower.tscn" id="8_vnd7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hohyh"]
-size = Vector2(16, 80)
+size = Vector2(16, 33)
 
 [node name="Stage_pasillo_princess" type="Node2D" unique_id=1301223828]
 script = ExtResource("1_xbrw8")
@@ -36,12 +37,15 @@ position = Vector2(24, 240)
 [node name="Princess" parent="." unique_id=363170649 instance=ExtResource("6_yswp3")]
 position = Vector2(394, 110)
 
+[node name="Flower" parent="." unique_id=1506506883 instance=ExtResource("8_vnd7s")]
+position = Vector2(264, 224)
+
 [node name="Area2D_goto_finalStage" type="Area2D" parent="." unique_id=1153433879]
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_goto_finalStage" unique_id=513319909]
-position = Vector2(264, 200)
+position = Vector2(264, 223.5)
 shape = SubResource("RectangleShape2D_hohyh")
 
 [connection signal="area_entered" from="Area2D_goto_finalStage" to="Princess" method="_on_area_2d_goto_final_stage_area_entered"]

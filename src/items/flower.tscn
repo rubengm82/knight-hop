@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dhm4wyuj2bfhr"]
+
+[ext_resource type="Texture2D" uid="uid://c4plt24mxxxoy" path="res://assets/graphics/sprites/flower.png" id="1_hwai2"]
+[ext_resource type="Script" uid="uid://ciy1sl50reft2" path="res://src/items/flower.gd" id="1_tytot"]
+[ext_resource type="AudioStream" uid="uid://drerk7ceud3sa" path="res://assets/sfx/sfx/flower.wav" id="3_o1vqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tytot"]
+atlas = ExtResource("1_hwai2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1vqw"]
+atlas = ExtResource("1_hwai2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vbtf"]
+atlas = ExtResource("1_hwai2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufr51"]
+atlas = ExtResource("1_hwai2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri28n"]
+atlas = ExtResource("1_hwai2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7wkg"]
+atlas = ExtResource("1_hwai2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmrdh"]
+atlas = ExtResource("1_hwai2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vq6ng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tytot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1vqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vbtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufr51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri28n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7wkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmrdh")
+}],
+"loop": false,
+"name": &"growing",
+"speed": 5.0
+}]
+
+[node name="Flower" type="Node2D" unique_id=1506506883]
+script = ExtResource("1_tytot")
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1333787886]
+sprite_frames = SubResource("SpriteFrames_vq6ng")
+animation = &"growing"
+
+[node name="AudioPlayer_flower" type="AudioStreamPlayer" parent="." unique_id=846714293]
+stream = ExtResource("3_o1vqw")
+autoplay = true
