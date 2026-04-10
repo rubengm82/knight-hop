@@ -122,10 +122,11 @@ func handle_jump_logic(delta: float) -> void:
 			jump_time = 0.0
 			velocity.y = JUMP_VELOCITY
 			audio_jump.play()
+			# Crear efecto de polvo al saltar solo si está en el suelo (no durante coyote time)
+			if coyote_timer == COYOTE_TIME:
+				_crear_polvo_salto()
 			coyote_timer = 0.0
 			jump_count = 1
-			# Crear efecto de polvo al saltar
-			_crear_polvo_salto()
 
 		elif ENABLE_DOUBLE_JUMP and jump_count < MAX_JUMPS:
 			# Doble salto en el aire
