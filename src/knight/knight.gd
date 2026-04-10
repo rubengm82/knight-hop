@@ -18,7 +18,7 @@ const MAX_JUMP_TIME := 0.2				# Tiempo máximo para salto variable
 const DOUBLE_JUMP_VELOCITY := -200.0	# El segundo salto sea inferior al primero
 const JUMP_FORCE := -350.0				# Fuerza aplicada mientras mantienes la tecla de salto
 const MAX_JUMPS := 2					# Número máximo de saltos (1 = normal, 2 = doble salto)
-const ENABLE_DOUBLE_JUMP := false		# Habilitar o deshabilitar el doble salto
+var ENABLE_DOUBLE_JUMP := false		    # Habilitar o deshabilitar el doble salto
 
 const DROP_THROUGH_HOLD_TIME := 0.05	# Tiempo mínimo que debes mantener abajo para poder caer
 

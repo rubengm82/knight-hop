@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://su11wivhe7pl"]
 
 [ext_resource type="Texture2D" uid="uid://cn2yu8c8aadf8" path="res://assets/graphics/sprites/boots.png" id="1_mn53a"]
+[ext_resource type="Script" uid="uid://glbwcnehv1vd" path="res://src/items/boots.gd" id="2_boots"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33fxc"]
 size = Vector2(12, 12)
 
-[node name="Boots" type="Node2D" unique_id=1536940765]
+[node name="Boots" type="Area2D" unique_id=1536940765]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_boots")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=555297025]
 scale = Vector2(0.75, 0.75)

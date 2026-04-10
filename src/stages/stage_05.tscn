@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="7_yt2x1"]
 [ext_resource type="PackedScene" uid="uid://bykwtetbrnnv0" path="res://src/items/coin.tscn" id="8_ehb2f"]
 [ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="9_gxxer"]
+[ext_resource type="PackedScene" uid="uid://su11wivhe7pl" path="res://src/items/boots.tscn" id="10_boots"]
 
 [node name="Stage_05" type="Node2D" unique_id=1301223828]
 script = ExtResource("1_mk001")
@@ -53,6 +54,9 @@ position = Vector2(177, 81)
 
 [node name="Coin5" parent="." unique_id=545103613 instance=ExtResource("8_ehb2f")]
 position = Vector2(91, 81)
+
+[node name="Boots" parent="." unique_id=123456789 instance=ExtResource("10_boots")]
+position = Vector2(200, 81)
 
 [node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("9_gxxer")]
 position = Vector2(24, 240)
