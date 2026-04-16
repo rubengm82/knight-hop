@@ -31,6 +31,7 @@ var down_hold_timer := 0.0				# Cuenta cuánto tiempo llevas apretando abajo
 
 # Control de movimiento durante transiciones
 var puede_moverse := true				# Si false, no se puede mover (durante transición)
+var is_dying := false					# Si true, está muriendo (para animación)
 
 
 # =====================================================
@@ -87,6 +88,8 @@ func handle_gravity_and_coyote(delta: float) -> void:
 # JUMP - Lógica de salto normal, doble salto y salto variable
 # =====================================================
 func handle_jump_logic(delta: float) -> void:
+	if is_dying:
+		return
 	
 	### INFORMACION DE COMO FUNCIONA EL SALTO(JUMP) DE KNIGHT
 	## Presiona jump?
@@ -183,6 +186,11 @@ func handle_horizontal_movement(delta: float) -> void:
 # ANIMATION de KNIGHT - Funcion para el manejo de animaciones
 # =====================================================
 func update_animation() -> void:
+	if is_dying:
+		if animation.animation != "dead":
+			animation.play("dead")
+		return
+	
 	if is_on_floor():
 		if abs(velocity.x) < 10.0:
 			animation.play("idle")
@@ -223,6 +231,18 @@ func drop_through() -> void:
 # AREA ENTERED - Cuando a Knight le atraviesa layers seleccionados
 # =====================================================
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	# Marcar como muriendo
+	is_dying = true
+	# Detener movimiento completamente
+	velocity = Vector2.ZERO
+	# Deshabilitar movimiento
+	puede_moverse = false
+	# Reproducir animación de muerte
+	animation.play("dead")
+	# Esperar a que termine la animación
+	await animation.animation_finished
+	# Esperar 1 segundo adicional
+	await get_tree().create_timer(1.0).timeout
 	# Buscar la escena principal
 	var main_scene = _buscar_main_scene()
 	
