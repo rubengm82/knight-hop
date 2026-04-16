@@ -1,0 +1,55 @@
+[gd_scene format=4 uid="uid://m2feu0fnscs7"]
+
+[ext_resource type="Script" uid="uid://cvann72jpc3fs" path="res://src/stages/stage_controller.gd" id="1_w7wdt"]
+[ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="2_7j2r2"]
+[ext_resource type="Texture2D" uid="uid://bkf0dfn8h0mls" path="res://assets/graphics/images/bg_dungeon_texture.png" id="3_gjj1c"]
+[ext_resource type="TileSet" uid="uid://q2yxg7lm1ehd" path="res://assets/graphics/tilesets/background_01.tres" id="4_l4sy3"]
+[ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="5_2gybd"]
+[ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="6_rqln7"]
+[ext_resource type="PackedScene" uid="uid://bykwtetbrnnv0" path="res://src/items/coin.tscn" id="7_mtkn4"]
+[ext_resource type="PackedScene" uid="uid://su11wivhe7pl" path="res://src/items/boots.tscn" id="8_pux8u"]
+[ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="9_335om"]
+
+[node name="Stage_06" type="Node2D" unique_id=1301223828]
+script = ExtResource("1_w7wdt")
+
+[node name="AudioBG_music" type="AudioStreamPlayer" parent="." unique_id=1160628703]
+stream = ExtResource("2_7j2r2")
+autoplay = true
+parameters/looping = true
+
+[node name="BgDungeonTexture" type="Sprite2D" parent="." unique_id=810656191]
+position = Vector2(224, 128)
+texture = ExtResource("3_gjj1c")
+
+[node name="TileMapLayer_bg" type="TileMapLayer" parent="." unique_id=364424027]
+tile_map_data = PackedByteArray("AAAEAAAAAAACAAAAAAAEAAEAAAACAAAAAAAJAAAAAAACAAAAAAAJAAEAAAACAAAAAAAJAAIAAAACAAAAAAAQAAAAAAACAAAAAAAQAAIAAAACAAAAAAAQAAMAAAACAAAAAAAQAAQAAAACAAAAAAAQAAYAAAACAAEAAAAJAAQAAAACAAEAAAAEAAMAAAACAAEAAAAWAAUAAAACAAEAAAAWAAMAAAACAAAAAAAWAAIAAAACAAAAAAAWAAEAAAACAAAAAAAWAAAAAAACAAAAAAATAAAAAAACAAAAAAATAAEAAAACAAAAAAATAAIAAAACAAAAAAAMAAAAAAACAAAAAAAMAAEAAAACAAAAAAAMAAIAAAACAAAAAAAMAAMAAAACAAAAAAAGAAAAAAACAAAAAAAGAAEAAAACAAAAAAABAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAAOAAAAAAACAAAAAAAMAAQAAAACAAAAAAAMAAUAAAACAAAAAAAMAAcAAAACAAAAAAAMAAYAAAACAAAAAAAMAAgAAAACAAAAAAAMAAoAAAACAAEAAAAQAAEAAAACAAAAAAA=")
+tile_set = ExtResource("4_l4sy3")
+
+[node name="TileMapLayer_stage" type="TileMapLayer" parent="." unique_id=1218654749]
+tile_map_data = PackedByteArray("AAABAA8AAAAAAAAAAAAAAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAAZAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAADAAEAAAAEAA8AAAADAAEAAAAFAA8AAAADAAEAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAADAAEAAAAJAA8AAAADAAEAAAAKAA8AAAADAAEAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAADAAEAAAAQAA8AAAADAAEAAAARAA8AAAADAAEAAAASAA8AAAADAAEAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAADAAEAAAAWAA8AAAADAAEAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAD//w0AAAAAAAAAAAD//w4AAAAAAAAAAAAcAAcAAAAAAAAAAAAcAAgAAAAAAAAAAAAcAAkAAAAAAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAcAA4AAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAACAAAAAAACAAMAAAACAAEAAAACAAMAAAACAAIAAAACAAMAAAAIAAAAAAACAAMAAAAIAAEAAAACAAMAAAAIAAIAAAACAAMAAAALAAAAAAACAAMAAAALAAEAAAACAAMAAAALAAIAAAACAAMAAAALAAMAAAACAAMAAAALAAQAAAACAAMAAAALAAUAAAACAAMAAAALAAYAAAACAAMAAAALAAcAAAACAAMAAAASAAAAAAACAAMAAAASAAEAAAACAAMAAAASAAIAAAACAAMAAAASAAMAAAACAAMAAAASAAQAAAACAAMAAAAAAAoAAAABAAMAAAABAAoAAAABAAMAAAAAAAsAAAACAAMAAAABAAsAAAACAAMAAAABAAwAAAACAAMAAAACAAoAAAABAAIAAAAAAA0AAAABAAIAAAAAAA4AAAABAAIAAAAbAA4AAAACAAEAAAAZAA4AAAACAAEAAAAbAA0AAAACAAIAAAAbAAwAAAACAAIAAAAbAAsAAAACAAIAAAAbAAoAAAACAAIAAAAYAA4AAAAAAAAAAAAYAA0AAAAAAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAYAAAAAAACAAAAAAA=")
+tile_set = ExtResource("5_2gybd")
+
+[node name="Door" parent="." unique_id=740232990 instance=ExtResource("6_rqln7")]
+position = Vector2(16, 136)
+
+[node name="Coin1" parent="." unique_id=304581339 instance=ExtResource("7_mtkn4")]
+position = Vector2(200, 183)
+
+[node name="Coin2" parent="." unique_id=1491872256 instance=ExtResource("7_mtkn4")]
+position = Vector2(264, 119)
+
+[node name="Coin3" parent="." unique_id=408756576 instance=ExtResource("7_mtkn4")]
+position = Vector2(152, 88)
+
+[node name="Coin4" parent="." unique_id=1031624261 instance=ExtResource("7_mtkn4")]
+position = Vector2(360, 103)
+
+[node name="Coin5" parent="." unique_id=545103613 instance=ExtResource("7_mtkn4")]
+position = Vector2(72, 71)
+
+[node name="Boots" parent="." unique_id=123456789 instance=ExtResource("8_pux8u")]
+position = Vector2(424, 230)
+
+[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("9_335om")]
+position = Vector2(32, 240)
