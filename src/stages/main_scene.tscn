@@ -10,11 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://dvj25x7cbaphg" path="res://src/stages/stage_04.tscn" id="5_vkmoq"]
 [ext_resource type="PackedScene" uid="uid://bl0nclsrqjuhj" path="res://src/stages/stage_05.tscn" id="6_6i5qs"]
 [ext_resource type="Script" uid="uid://c43pmgbtlns32" path="res://src/ui/fade_transition.gd" id="6_fade"]
+[ext_resource type="PackedScene" uid="uid://dxik2q4eajajw" path="res://src/stages/stage_07.tscn" id="8_twf6q"]
 [ext_resource type="PackedScene" uid="uid://m2feu0fnscs7" path="res://src/stages/stage_06.tscn" id="8_xo58f"]
 
 [node name="MainScene" type="Node2D" unique_id=1897659467]
 script = ExtResource("1_l3epe")
-niveles = Array[PackedScene]([ExtResource("2_w4usf"), ExtResource("4_02jhv"), ExtResource("5_ia6yh"), ExtResource("5_vkmoq"), ExtResource("6_6i5qs"), ExtResource("8_xo58f"), ExtResource("5_20swq"), ExtResource("4_pcy8l")])
+niveles = Array[PackedScene]([ExtResource("2_w4usf"), ExtResource("4_02jhv"), ExtResource("5_ia6yh"), ExtResource("5_vkmoq"), ExtResource("6_6i5qs"), ExtResource("8_xo58f"), ExtResource("8_twf6q"), ExtResource("5_20swq"), ExtResource("4_pcy8l")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=807637087]
 position = Vector2(224, 128)

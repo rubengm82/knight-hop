@@ -1,0 +1,63 @@
+[gd_scene format=4 uid="uid://dxik2q4eajajw"]
+
+[ext_resource type="Script" uid="uid://cvann72jpc3fs" path="res://src/stages/stage_controller.gd" id="1_bpajf"]
+[ext_resource type="AudioStream" uid="uid://djovpchpfe5d3" path="res://assets/sfx/music/music.ogg" id="2_opgrc"]
+[ext_resource type="Texture2D" uid="uid://bkf0dfn8h0mls" path="res://assets/graphics/images/bg_dungeon_texture.png" id="3_1k60d"]
+[ext_resource type="TileSet" uid="uid://q2yxg7lm1ehd" path="res://assets/graphics/tilesets/background_01.tres" id="4_61hk0"]
+[ext_resource type="TileSet" uid="uid://bvrgf04g7ko8p" path="res://assets/graphics/tilesets/dungeon_01.tres" id="5_3mb1c"]
+[ext_resource type="PackedScene" uid="uid://cq0jnaj0mj8ox" path="res://src/items/door.tscn" id="6_cbqqm"]
+[ext_resource type="PackedScene" uid="uid://bykwtetbrnnv0" path="res://src/items/coin.tscn" id="7_jgesg"]
+[ext_resource type="PackedScene" uid="uid://su11wivhe7pl" path="res://src/items/boots.tscn" id="8_8gkc5"]
+[ext_resource type="PackedScene" uid="uid://ci2of6nhbsiik" path="res://src/knight/knight.tscn" id="9_afajs"]
+[ext_resource type="PackedScene" uid="uid://dcuweai4a4q70" path="res://src/enemies/slime_red.tscn" id="10_opgrc"]
+
+[node name="Stage_07" type="Node2D" unique_id=1301223828]
+script = ExtResource("1_bpajf")
+
+[node name="AudioBG_music" type="AudioStreamPlayer" parent="." unique_id=1160628703]
+stream = ExtResource("2_opgrc")
+autoplay = true
+parameters/looping = true
+
+[node name="BgDungeonTexture" type="Sprite2D" parent="." unique_id=810656191]
+position = Vector2(224, 128)
+texture = ExtResource("3_1k60d")
+
+[node name="TileMapLayer_bg" type="TileMapLayer" parent="." unique_id=364424027]
+tile_map_data = PackedByteArray("AAADAAMAAAACAAEAAAARAAMAAAACAAEAAAARAAEAAAACAAAAAAARAAAAAAACAAAAAAAKAAEAAAACAAAAAAAKAAAAAAACAAAAAAADAAEAAAACAAAAAAADAAAAAAACAAAAAAAKAAYAAAACAAEAAAAKAAIAAAACAAAAAAAKAAMAAAACAAAAAAAKAAQAAAACAAAAAAA=")
+tile_set = ExtResource("4_61hk0")
+
+[node name="TileMapLayer_stage" type="TileMapLayer" parent="." unique_id=1218654749]
+position = Vector2(0, 1)
+tile_map_data = PackedByteArray("AAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAbAAoAAAAAAAAAAAAHAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAARAA8AAAAAAAAAAAAbAAcAAAAAAAAAAAAbAAgAAAAAAAAAAAAbAAkAAAAAAAAAAAAbAAYAAAAAAAAAAAAbAAIAAAAAAAAAAAAbAAMAAAAAAAAAAAAbAAQAAAAAAAAAAAAbAAUAAAAAAAAAAAAbAAEAAAADAAEAAAAWAAwAAAACAAAAAAAXAAwAAAACAAAAAAAYAAwAAAACAAAAAAAZAAwAAAACAAAAAAAaAAwAAAACAAAAAAAbAAsAAAAAAAAAAAAbAAwAAAACAAAAAAAaAAgAAAACAAAAAAAZAAgAAAACAAAAAAAaAAYAAAACAAAAAAAZAAYAAAACAAAAAAAaAAQAAAACAAAAAAAZAAQAAAACAAAAAAAaAAIAAAACAAAAAAAAABAAAAACAAEAAAABABAAAAACAAEAAAACABAAAAACAAEAAAADABAAAAACAAEAAAAEABAAAAACAAEAAAAFABAAAAACAAEAAAAGABAAAAACAAEAAAAHABAAAAACAAEAAAAIABAAAAACAAEAAAAJABAAAAACAAEAAAAKABAAAAACAAEAAAALABAAAAACAAEAAAAMABAAAAACAAEAAAANABAAAAACAAEAAAAOABAAAAACAAEAAAAPABAAAAACAAEAAAAQABAAAAACAAEAAAARABAAAAACAAEAAAASABAAAAACAAEAAAATABAAAAACAAEAAAAUABAAAAACAAEAAAAVABAAAAACAAEAAAAWABAAAAACAAEAAAAZABAAAAACAAEAAAAaABAAAAACAAEAAAAYABAAAAACAAEAAAAXABAAAAACAAEAAAD//xAAAAABAAIAAAD//w8AAAABAAIAAAD//w4AAAABAAIAAAD//w0AAAABAAIAAAD//wwAAAABAAIAAAD//wsAAAABAAIAAAD//woAAAABAAIAAAD//wkAAAABAAIAAAAbABAAAAACAAIAAAAbAA8AAAACAAIAAAAbAA4AAAACAAIAAAAbAA0AAAACAAIAAAAWAAAAAAACAAMAAAAWAAEAAAACAAMAAAAWAAIAAAACAAMAAAAUAAAAAAACAAMAAAAUAAEAAAACAAMAAAAUAAIAAAACAAMAAAAUAAMAAAACAAMAAAAUAAQAAAACAAMAAAAUAAYAAAACAAMAAAAUAAUAAAACAAMAAAANAAAAAAACAAMAAAANAAEAAAACAAMAAAANAAIAAAACAAMAAAANAAMAAAACAAMAAAAGAAAAAAACAAMAAAAGAAEAAAACAAMAAAABAAAAAAACAAMAAAA=")
+tile_set = ExtResource("5_3mb1c")
+
+[node name="Door" parent="." unique_id=740232990 instance=ExtResource("6_cbqqm")]
+position = Vector2(416, 169)
+
+[node name="Coin1" parent="." unique_id=304581339 instance=ExtResource("7_jgesg")]
+position = Vector2(56, 71)
+
+[node name="Coin2" parent="." unique_id=1491872256 instance=ExtResource("7_jgesg")]
+position = Vector2(119, 133)
+
+[node name="Coin3" parent="." unique_id=408756576 instance=ExtResource("7_jgesg")]
+position = Vector2(119, 205)
+
+[node name="Coin4" parent="." unique_id=1031624261 instance=ExtResource("7_jgesg")]
+position = Vector2(280, 71)
+
+[node name="Coin5" parent="." unique_id=545103613 instance=ExtResource("7_jgesg")]
+position = Vector2(424, 24)
+
+[node name="Boots" parent="." unique_id=123456789 instance=ExtResource("8_8gkc5")]
+position = Vector2(200, 228)
+
+[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("9_afajs")]
+position = Vector2(119, 241)
+
+[node name="SlimeRed1" parent="." unique_id=1103676922 instance=ExtResource("10_opgrc")]
+position = Vector2(392, 185)
+
+[node name="SlimeRed2" parent="." unique_id=877088935 instance=ExtResource("10_opgrc")]
+position = Vector2(424, 89)
