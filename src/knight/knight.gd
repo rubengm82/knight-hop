@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animation: AnimatedSprite2D = $Animation
 @onready var audio_jump: AudioStreamPlayer = $AudioPlayer_jump
+@onready var audio_dead: AudioStreamPlayer = $AudioPlayer_dead
 @onready var area2d: Area2D = $Area2D_Damage
 
 # Cargar la escena de polvo para el salto
@@ -231,8 +232,20 @@ func drop_through() -> void:
 # AREA ENTERED - Cuando a Knight le atraviesa layers seleccionados
 # =====================================================
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	handle_death()
+
+# =====================================================
+# HANDLE DEATH - Maneja la lógica de muerte del knight
+# =====================================================
+func handle_death() -> void:
 	# Marcar como muriendo
 	is_dying = true
+	# Reproducir sonido de muerte
+	audio_dead.play()
+	# Detener la música de fondo
+	var bg_music = get_tree().get_current_scene().find_child("AudioBG_music", true, false)
+	if bg_music:
+		bg_music.stop()
 	# Detener movimiento completamente
 	velocity = Vector2.ZERO
 	# Deshabilitar movimiento

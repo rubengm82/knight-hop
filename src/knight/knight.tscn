@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xh7hilhbq15d" path="res://assets/graphics/sprites/knight.png" id="1_4r0at"]
 [ext_resource type="Script" uid="uid://c84ijltmer26e" path="res://src/knight/knight.gd" id="1_j45nf"]
 [ext_resource type="AudioStream" uid="uid://btrr7ptvpts07" path="res://assets/sfx/sfx/jump.wav" id="3_o53dj"]
+[ext_resource type="AudioStream" path="res://assets/sfx/sfx/dead.wav" id="4_dead"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a7i1b"]
 atlas = ExtResource("1_4r0at")
@@ -215,6 +216,10 @@ shape = SubResource("RectangleShape2D_o53dj")
 
 [node name="AudioPlayer_jump" type="AudioStreamPlayer" parent="." unique_id=1786569880]
 stream = ExtResource("3_o53dj")
+volume_db = -4.0
+
+[node name="AudioPlayer_dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dead")
 volume_db = -4.0
 
 [node name="Area2D_Damage" type="Area2D" parent="." unique_id=126679164]
