@@ -21,6 +21,9 @@ func _input(event: InputEvent) -> void:
 	# Cheat: Saltar al siguiente nivel con la tecla 'n'
 	if event is InputEventKey and event.pressed and event.keycode == KEY_N:
 		_saltar_nivel()
+	# Cambiar entre pantalla completa y ventana con la acción 'fullscreen_windowed_switch'
+	elif event.is_action_pressed("fullscreen_windowed_switch"):
+		_toggle_fullscreen()
 
 func _saltar_nivel() -> void:
 	# Verificar que no esté en el último nivel
@@ -87,3 +90,10 @@ func _on_transicion_completada() -> void:
 			if knight.has_method("set_puede_moverse"):
 				knight.set_puede_moverse(true)
 	print("Transición completada - Jugador puede moverse")
+
+func _toggle_fullscreen() -> void:
+	var window_mode = DisplayServer.window_get_mode()
+	if window_mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

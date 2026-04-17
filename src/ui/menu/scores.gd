@@ -11,6 +11,11 @@ func _ready() -> void:
 	_display_scores()
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen_windowed_switch"):
+		_toggle_fullscreen()
+
+
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://src/ui/menu/menu.tscn")
 
@@ -38,7 +43,7 @@ func _display_scores() -> void:
 	else:
 		for score in scores:
 			var player_name: String = score["name"]
-			var time: float = score["time"]
+			var time: int = score["time"]
 			
 			var hbox = HBoxContainer.new()
 			
@@ -74,3 +79,11 @@ func _apply_header_style(label: Label) -> void:
 	var font_size = header_name_label.get_theme_font_size("font_size")
 	if font_size > 0:
 		label.add_theme_font_size_override("font_size", font_size)
+
+
+func _toggle_fullscreen() -> void:
+	var window_mode = DisplayServer.window_get_mode()
+	if window_mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

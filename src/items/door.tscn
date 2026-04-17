@@ -102,7 +102,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwlkr"]
-size = Vector2(4, 2)
+size = Vector2(18, 2)
 
 [node name="Door" type="Area2D" unique_id=740232990]
 collision_layer = 0
