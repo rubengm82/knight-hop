@@ -14,7 +14,7 @@ func _ready() -> void:
 	# Conectar la señal de transición completada
 	fade_transition.transicion_completada.connect(_on_transicion_completada)
 	# Inicializar el gestor de puntuaciones
-	high_score_manager = HighScoreManager.new()
+	high_score_manager = HighScoreManager.get_instance()
 	crear_nivel(_nivel_actual)
 
 func _input(event: InputEvent) -> void:
