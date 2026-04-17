@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ctwcuhl5imw3e"]
+
+[ext_resource type="FontFile" uid="uid://c1tp24nj0cg4n" path="res://assets/fonts/arcadeclassic.regular.ttf" id="1_30et5"]
+[ext_resource type="Script" uid="uid://45q1qjhuu4ar" path="res://src/ui/menu/menu.gd" id="1_brfkb"]
+
+[node name="Menu" type="Control" unique_id=380253881]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_brfkb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=940359769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1618156293]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -55.0
+offset_right = 100.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_PLAY" type="Button" parent="VBoxContainer" unique_id=1758177386]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_30et5")
+theme_override_font_sizes/font_size = 25
+text = "PLAY"
+
+[node name="Button_SCORE" type="Button" parent="VBoxContainer" unique_id=443818288]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_30et5")
+theme_override_font_sizes/font_size = 25
+text = "SCORE	"
+
+[node name="Button_EXIT" type="Button" parent="VBoxContainer" unique_id=1755700131]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_30et5")
+theme_override_font_sizes/font_size = 25
+text = "EXIT"
