@@ -6,11 +6,15 @@ var _nivel_actual: int = 1
 var _nivel_instanciado: Node
 @onready var time_score = $TimeScore
 @onready var fade_transition = $FadeTransition
+var high_score_manager: HighScoreManager
+var score_saved_this_run: bool = false
 
 
 func _ready() -> void:
 	# Conectar la señal de transición completada
 	fade_transition.transicion_completada.connect(_on_transicion_completada)
+	# Inicializar el gestor de puntuaciones
+	high_score_manager = HighScoreManager.new()
 	crear_nivel(_nivel_actual)
 
 func _input(event: InputEvent) -> void:
@@ -40,6 +44,10 @@ func crear_nivel(numero_nivel: int):
 	
 	# Configurar el timer según el nivel
 	_configurar_timer(numero_nivel)
+	
+	# Si es el último nivel y aún no se ha guardado el score, guardarlo
+	if numero_nivel == niveles.size() and not score_saved_this_run:
+		_save_final_score()
 
 func _configurar_timer(numero_nivel: int) -> void:
 	if numero_nivel == 1:
@@ -56,6 +64,12 @@ func _configurar_timer(numero_nivel: int) -> void:
 		# Solo la primera vez que pasamos al nivel 2: iniciar contador
 		time_score.reiniciar_contador()
 	# Si ya estaba contando, sigue contando desde donde estaba
+
+func _save_final_score() -> void:
+	var final_time = time_score.seconds
+	high_score_manager.save_score(final_time)
+	score_saved_this_run = true
+	print("Score guardado: ", final_time, " segundos")
 
 func eliminar_nivel():
 	_nivel_instanciado.queue_free()
