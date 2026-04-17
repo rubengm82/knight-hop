@@ -9,6 +9,7 @@ extends Control
 func _ready() -> void:
 	button_back.pressed.connect(_on_back_pressed)
 	_display_scores()
+	button_back.grab_focus()
 
 
 func _input(event: InputEvent) -> void:

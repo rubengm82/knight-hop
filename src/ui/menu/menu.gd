@@ -8,6 +8,7 @@ func _ready() -> void:
 	button_play.pressed.connect(_on_play_pressed)
 	button_score.pressed.connect(_on_score_pressed)
 	button_exit.pressed.connect(_on_exit_pressed)
+	button_play.grab_focus()
 
 
 func _input(event: InputEvent) -> void:

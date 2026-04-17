@@ -61,6 +61,7 @@ horizontal_alignment = 2
 
 [node name="Button_BACK" type="Button" parent="VBoxContainer" unique_id=1279680849]
 layout_mode = 2
+focus_mode = 2
 theme_override_fonts/font = ExtResource("1_pwnse")
 theme_override_font_sizes/font_size = 25
 text = "BACK TO MENU"
