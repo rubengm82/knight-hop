@@ -50,8 +50,8 @@ func save_score(time: int) -> void:
     # Si el nuevo tiempo no es mejor que el tercero, no hacer nada
     if time >= scores[2].time:
         return
-    # Anadir nueva puntuacion y reordenar
-    scores.append({ "rank": 0, "name": "COM", "time": time })
+    # Anadir nueva puntuacion (PLAYER = 'PLY') y reordenar
+    scores.append({ "rank": 0, "name": "PLY", "time": time })
     scores.sort_custom(func(a: Dictionary, b: Dictionary): return a.time < b.time)
     if scores.size() > 3:
         scores = scores.slice(0, 3)
