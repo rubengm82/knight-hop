@@ -22,6 +22,12 @@ parameters/looping = true
 position = Vector2(224, 128)
 texture = ExtResource("2_a8b12")
 
+[node name="Door" parent="." unique_id=740232990 instance=ExtResource("5_7tidt")]
+position = Vector2(48, 216)
+
+[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("8_16frl")]
+position = Vector2(56, 173)
+
 [node name="TileMapLayer_bg" type="TileMapLayer" parent="." unique_id=364424027]
 tile_map_data = PackedByteArray("AAADAAcAAAACAAAAAAADAAkAAAACAAEAAAARAAcAAAAAAAAAAAABAAUAAAABAAAAAAAaAA4AAAABAAAAAAA=")
 tile_set = ExtResource("1_hkps2")
@@ -35,9 +41,6 @@ position = Vector2(424, 168)
 
 [node name="SlimeRed2" parent="." unique_id=590287789 instance=ExtResource("2_i25df")]
 position = Vector2(360, 232)
-
-[node name="Door" parent="." unique_id=740232990 instance=ExtResource("5_7tidt")]
-position = Vector2(48, 216)
 
 [node name="Coin1" parent="." unique_id=304581339 instance=ExtResource("7_h3xsu")]
 position = Vector2(113, 195)
@@ -53,6 +56,3 @@ position = Vector2(424, 225)
 
 [node name="Coin5" parent="." unique_id=545103613 instance=ExtResource("7_h3xsu")]
 position = Vector2(46, 82)
-
-[node name="Knight" parent="." unique_id=1393028123 instance=ExtResource("8_16frl")]
-position = Vector2(56, 173)
