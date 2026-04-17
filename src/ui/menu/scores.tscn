@@ -48,8 +48,17 @@ theme_override_font_sizes/font_size = 36
 text = "SCORES"
 horizontal_alignment = 1
 
-[node name="Label_SCORES" type="Label" parent="VBoxContainer" unique_id=1532328437]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1414823556]
+layout_mode = 2
+
+[node name="Label_NAMES" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1532328437]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_pwnse")
 theme_override_font_sizes/font_size = 20
-text = "puntuacion"
+text = "name"
+
+[node name="Label_SEC" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=819327322]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pwnse")
+theme_override_font_sizes/font_size = 20
+text = "SEC"
