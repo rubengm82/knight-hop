@@ -6,6 +6,87 @@
 [ext_resource type="AudioStream" uid="uid://bfkv37dr1516" path="res://assets/sfx/music/menu_music.mp3" id="4_wdaks"]
 [ext_resource type="AudioStream" uid="uid://clm2fqauh813r" path="res://assets/sfx/sfx/blipSelect.wav" id="5_select"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfv6s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n0km"]
+bg_color = Color(0.9490196, 0.3882353, 0.41568628, 0.15686275)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0842u"]
+bg_color = Color(0.9490196, 0.3882353, 0.41568628, 0.15686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5882353, 0.33333334, 0.24313726, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18lbo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4ivs"]
+bg_color = Color(0.9490196, 0.3882353, 0.41568628, 0.15686275)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejfrk"]
+bg_color = Color(0.9490196, 0.3882353, 0.41568628, 0.15686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5882353, 0.33333334, 0.24313726, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2fur"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbdah"]
+bg_color = Color(0.9490196, 0.3882353, 0.41568628, 0.15686275)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gli3o"]
+bg_color = Color(0.9490196, 0.3882353, 0.41568628, 0.15686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5882353, 0.33333334, 0.24313726, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e4yp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmgjg"]
+bg_color = Color(0.9490196, 0.3882353, 0.41568628, 0.15686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5882353, 0.33333334, 0.24313726, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="Menu" type="Control" unique_id=380253881]
 layout_mode = 3
 anchors_preset = 15
@@ -46,18 +127,27 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_30et5")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_lfv6s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7n0km")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0842u")
 text = "PLAY"
 
 [node name="Button_SCORE" type="Button" parent="VBoxContainer" unique_id=443818288]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_30et5")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_18lbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j4ivs")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ejfrk")
 text = "SCORE	"
 
 [node name="Button_EXIT" type="Button" parent="VBoxContainer" unique_id=1755700131]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_30et5")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_p2fur")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bbdah")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gli3o")
 text = "EXIT"
 
 [node name="Label_GAP" type="Label" parent="VBoxContainer" unique_id=645720602]
@@ -75,6 +165,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.87, 0.55462503, 0.1131, 1)
 theme_override_fonts/font = ExtResource("1_30et5")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_6e4yp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gmgjg")
 alignment = 1
 
 [node name="Label_VERSION" type="Label" parent="." unique_id=604157266]
