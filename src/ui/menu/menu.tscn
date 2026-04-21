@@ -52,3 +52,20 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_30et5")
 theme_override_font_sizes/font_size = 25
 text = "EXIT"
+
+[node name="Label_GAP" type="Label" parent="VBoxContainer" unique_id=645720602]
+layout_mode = 2
+
+[node name="Label_NAME" type="Label" parent="VBoxContainer" unique_id=555883906]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_30et5")
+theme_override_font_sizes/font_size = 25
+text = "PLAYER   NAME"
+horizontal_alignment = 1
+
+[node name="LineEdit_NAME" type="LineEdit" parent="VBoxContainer" unique_id=556742568]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87, 0.55462503, 0.1131, 1)
+theme_override_fonts/font = ExtResource("1_30et5")
+theme_override_font_sizes/font_size = 25
+alignment = 1
