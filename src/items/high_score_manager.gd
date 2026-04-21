@@ -5,6 +5,7 @@ extends RefCounted
 # Usa SQLite para almacenar top 3 puntuaciones.
 
 var db: SQLite
+var player_name: String = "PLY"
 
 # Instancia singleton
 static var instance: HighScoreManager = null
@@ -61,8 +62,8 @@ func save_score(time: int) -> void:
 	# Si el nuevo tiempo no es mejor que el tercero, no hacer nada
 	if time >= scores[2].time:
 		return
-	# Anadir nueva puntuacion (PLAYER = 'PLY') y reordenar
-	scores.append({ "rank": 0, "name": "PLY", "time": time })
+	# Anadir nueva puntuacion y reordenar
+	scores.append({ "rank": 0, "name": player_name, "time": time })
 	scores.sort_custom(func(a: Dictionary, b: Dictionary): return a.time < b.time)
 	if scores.size() > 3:
 		scores = scores.slice(0, 3)

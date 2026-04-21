@@ -3,12 +3,17 @@ extends Control
 @onready var button_play: Button = $VBoxContainer/Button_PLAY
 @onready var button_score: Button = $VBoxContainer/Button_SCORE
 @onready var button_exit: Button = $VBoxContainer/Button_EXIT
+@onready var line_edit_name: LineEdit = $VBoxContainer/LineEdit_NAME
 
 func _ready() -> void:
 	button_play.pressed.connect(_on_play_pressed)
 	button_score.pressed.connect(_on_score_pressed)
 	button_exit.pressed.connect(_on_exit_pressed)
 	button_play.grab_focus()
+	
+	# Configurar LineEdit con nombre por defecto y maximo 3 caracteres
+	line_edit_name.text = "PLY"
+	line_edit_name.max_length = 3
 
 
 func _input(event: InputEvent) -> void:
@@ -17,6 +22,9 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_play_pressed() -> void:
+	# Guardar el nombre del jugador en el HighScoreManager
+	var hsm = HighScoreManager.get_instance()
+	hsm.player_name = line_edit_name.text if line_edit_name.text != "" else "PLY"
 	get_tree().change_scene_to_file("res://src/stages/main_scene.tscn")
 
 
