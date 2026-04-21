@@ -24,6 +24,9 @@ func _input(event: InputEvent) -> void:
 	# Cambiar entre pantalla completa y ventana con la acción 'fullscreen_windowed_switch'
 	elif event.is_action_pressed("fullscreen_windowed_switch"):
 		_toggle_fullscreen()
+	# Volver al menú principal con ESC
+	elif event.is_action_pressed("exit_game"):
+		get_tree().change_scene_to_file("res://src/ui/menu/menu.tscn")
 
 func _saltar_nivel() -> void:
 	# Verificar que no esté en el último nivel

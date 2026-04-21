@@ -4,12 +4,19 @@ extends Control
 @onready var button_score: Button = $VBoxContainer/Button_SCORE
 @onready var button_exit: Button = $VBoxContainer/Button_EXIT
 @onready var line_edit_name: LineEdit = $VBoxContainer/LineEdit_NAME
+@onready var audio_select: AudioStreamPlayer = $AudioPlayer_SELECT
 
 func _ready() -> void:
 	button_play.pressed.connect(_on_play_pressed)
 	button_score.pressed.connect(_on_score_pressed)
 	button_exit.pressed.connect(_on_exit_pressed)
+	
 	button_play.grab_focus()
+	
+	# Conectar sonido de selección al recibir foco (después de grab_focus para evitar sonido inicial)
+	button_play.focus_entered.connect(_on_focus_entered)
+	button_score.focus_entered.connect(_on_focus_entered)
+	button_exit.focus_entered.connect(_on_focus_entered)
 	
 	# Configurar LineEdit con nombre por defecto y maximo 3 caracteres
 	line_edit_name.text = "PLY"
@@ -34,6 +41,10 @@ func _on_score_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_focus_entered() -> void:
+	audio_select.play()
 
 
 func _toggle_fullscreen() -> void:

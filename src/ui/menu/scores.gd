@@ -35,7 +35,7 @@ func _display_scores() -> void:
 	if scores.size() == 0:
 		var msg_hbox = HBoxContainer.new()
 		var msg_label = Label.new()
-		msg_label.text = "No hay puntuaciones guardadas"
+		msg_label.text = "No Score"
 		msg_label.horizontal_alignment = 1  # CENTER
 		msg_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		_apply_header_style(msg_label)

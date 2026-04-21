@@ -2,6 +2,9 @@
 
 [ext_resource type="FontFile" uid="uid://c1tp24nj0cg4n" path="res://assets/fonts/arcadeclassic.regular.ttf" id="1_30et5"]
 [ext_resource type="Script" uid="uid://45q1qjhuu4ar" path="res://src/ui/menu/menu.gd" id="1_brfkb"]
+[ext_resource type="Texture2D" uid="uid://c5v6dx3gvy5qg" path="res://assets/graphics/images/menu_bg.png" id="2_cuta5"]
+[ext_resource type="AudioStream" uid="uid://bfkv37dr1516" path="res://assets/sfx/music/menu_music.mp3" id="4_wdaks"]
+[ext_resource type="AudioStream" uid="uid://clm2fqauh813r" path="res://assets/sfx/sfx/blipSelect.wav" id="5_select"]
 
 [node name="Menu" type="Control" unique_id=380253881]
 layout_mode = 3
@@ -20,6 +23,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="MenuBg" type="Sprite2D" parent="." unique_id=1327589204]
+position = Vector2(224, 128)
+texture = ExtResource("2_cuta5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1618156293]
 layout_mode = 1
@@ -69,3 +76,32 @@ theme_override_colors/font_color = Color(0.87, 0.55462503, 0.1131, 1)
 theme_override_fonts/font = ExtResource("1_30et5")
 theme_override_font_sizes/font_size = 25
 alignment = 1
+
+[node name="Label_VERSION" type="Label" parent="." unique_id=604157266]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 242.0
+offset_right = 446.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("1_30et5")
+theme_override_font_sizes/font_size = 11
+text = "Knight Hop 1.0"
+
+[node name="Label_AUTHOR" type="Label" parent="." unique_id=264582560]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 244.0
+offset_right = 115.0
+offset_bottom = 255.0
+theme_override_fonts/font = ExtResource("1_30et5")
+theme_override_font_sizes/font_size = 10
+text = "RUBEN   GALLARDO   MANCHA"
+
+[node name="AudioPlayer_MUSIC" type="AudioStreamPlayer" parent="." unique_id=39776346]
+stream = ExtResource("4_wdaks")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioPlayer_SELECT" type="AudioStreamPlayer" parent="." unique_id=123456789]
+stream = ExtResource("5_select")
+volume_db = -6.5

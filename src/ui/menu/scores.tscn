@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csn40wsvupm6x" path="res://src/ui/menu/scores.gd" id="1_3c71i"]
 [ext_resource type="FontFile" uid="uid://c1tp24nj0cg4n" path="res://assets/fonts/arcadeclassic.regular.ttf" id="1_pwnse"]
+[ext_resource type="Texture2D" uid="uid://c5v6dx3gvy5qg" path="res://assets/graphics/images/menu_bg.png" id="2_57hqy"]
 
 [node name="Scores" type="Control" unique_id=977210300]
 layout_mode = 3
@@ -20,6 +21,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="MenuBg" type="Sprite2D" parent="." unique_id=2049001244]
+position = Vector2(224, 128)
+texture = ExtResource("2_57hqy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=89642703]
 layout_mode = 1
@@ -61,7 +66,6 @@ horizontal_alignment = 2
 
 [node name="Button_BACK" type="Button" parent="VBoxContainer" unique_id=1279680849]
 layout_mode = 2
-focus_mode = 2
 theme_override_fonts/font = ExtResource("1_pwnse")
 theme_override_font_sizes/font_size = 25
 text = "BACK TO MENU"
